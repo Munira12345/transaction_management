@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transaction Management System'),
+        title: const Text('Transaction Management System'),
       ),
       body: Center(
         child: Column(
@@ -15,23 +17,24 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/sendMoney');
               },
-              child: Text('Send Money'),
+              child: const Text('Send Money'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
+
             ElevatedButton(
               onPressed: () {
                 // Navigate to Check Balance screen
                 Navigator.pushNamed(context, '/checkBalance');
               },
-              child: Text('Check Balance'),
+              child: const Text('Check Balance'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 // Navigate to View Transactions screen
                 Navigator.pushNamed(context, '/viewTransactions');
               },
-              child: Text('View Transactions'),
+              child: const Text('View Transactions'),
             ),
           ],
         ),

@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(), //  HomeScreen as the initial screen
-        '/sendMoney': (context) => SendMoneyScreen(),  // SendMoneyScreen route
+        '/': (context) => const HomeScreen(), //  HomeScreen as the initial screen
+        '/sendMoney': (context) => const SendMoneyScreen(),  // SendMoneyScreen route
         // other routes for Check Balance and View Transactions later
       },
     );
