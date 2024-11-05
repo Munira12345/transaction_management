@@ -1,4 +1,4 @@
-# Use a base image for Flutter
+# Use a base image with Flutter and the latest Dart SDK
 FROM cirrusci/flutter:stable
 
 # Set working directory
@@ -7,15 +7,18 @@ WORKDIR /app
 # Copy project files into the container
 COPY . /app
 
-# Build the Flutter app for web (as an example; you can also choose Android or iOS)
-RUN flutter build web
+# Install necessary dependencies for Android builds
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk && \
+    yes | sdkmanager --licenses && \
+    flutter upgrade && \
+    flutter pub get
 
-# Use a lightweight web server to serve the Flutter web app
-RUN apt-get update && apt-get install -y nginx
-COPY build/web /var/www/html
+# Switch to a non-root user to build
+RUN useradd -m flutteruser
+USER flutteruser
 
-# Expose port 80
-EXPOSE 80
+# Build the Flutter app for Android
+RUN flutter build apk --release
 
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# The APK output will be in /app/build/app/outputs/flutter-apk
