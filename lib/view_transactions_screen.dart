@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ViewTransactionsScreen extends StatelessWidget {
-  const ViewTransactionsScreen({Key? key}) : super(key: key);
+  const ViewTransactionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

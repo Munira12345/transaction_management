@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TransactionStatusScreen extends StatelessWidget {
   final String transactionId;
 
-  const TransactionStatusScreen({Key? key, required this.transactionId}) : super(key: key);
+  const TransactionStatusScreen({super.key, required this.transactionId});
 
   @override
   Widget build(BuildContext context) {
