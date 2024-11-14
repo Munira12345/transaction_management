@@ -4,10 +4,15 @@ import 'send_money_screen.dart';
 import 'check_balance_screen.dart';
 import 'view_transactions_screen.dart';
 import 'transaction_status_screen.dart';
+import 'service_locator.dart';
+import 'api_service.dart';
+import 'service_locator.dart';
+
 
 void main() {
+  setupServiceLocator();
   runApp(const MyApp());
-}
+ }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

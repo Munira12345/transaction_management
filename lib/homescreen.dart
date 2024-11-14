@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'api_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  final ApiService _apiService = GetIt.I<ApiService>();
   // stateful +rotation
   @override
   Widget build(BuildContext context) {
@@ -16,6 +19,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
+                // _apiService.fetchTransactions();
                 Navigator.pushNamed(context, '/sendMoney');
               },
               child: const Text('Send Money'),
@@ -25,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate to Check Balance screen
-                Navigator.pushNamed(context, '/checkBalance');
+                 Navigator.pushNamed(context, '/checkBalance');
               },
               child: const Text('Check Balance'),
             ),
