@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'homescreen.dart';
 import 'send_money_screen.dart';
 import 'check_balance_screen.dart';
@@ -8,10 +9,9 @@ import 'service_locator.dart';
 import 'api_service.dart';
 import 'service_locator.dart';
 
-
 void main() {
   setupServiceLocator();
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
  }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeScreen(), // HomeScreen as the initial screen
+        '/': (context) =>  HomeScreen(), // HomeScreen as the initial screen
         '/sendMoney': (context) => const SendMoneyScreen(),  // SendMoneyScreen route
         '/checkBalance': (context) => const CheckBalanceScreen(),  // CheckBalanceScreen route
         '/viewTransactions': (context) => const ViewTransactionsScreen(),  // ViewTransactionsScreen route

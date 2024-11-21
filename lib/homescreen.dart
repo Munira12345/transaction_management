@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'api_service.dart';
+import 'transaction_repository.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final TransactionRepository _transactionRepo = GetIt.I<TransactionRepository>();
+   HomeScreen({super.key});
 
   final ApiService _apiService = GetIt.I<ApiService>();
   // stateful +rotation
-  @override
+
+      @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Transaction Management System'),
