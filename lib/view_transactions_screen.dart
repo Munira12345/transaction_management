@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'transactions_view_model.dart'; // Import your ViewModel
-import 'transaction.dart'; // Import the Transaction model
+// Import the Transaction model
 
 class ViewTransactionsScreen extends ConsumerWidget {
   const ViewTransactionsScreen({super.key});

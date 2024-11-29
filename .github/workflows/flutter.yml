@@ -21,6 +21,14 @@ jobs:
         with:
           flutter-version: '3.0.0'  # Specify the Flutter version you want
 
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-pub-cache-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-cache-
+
       - name: Install dependencies
         run: flutter pub get
 
