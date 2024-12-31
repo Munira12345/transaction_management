@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
 
+
       routes: {
         '/': (context) =>  HomeScreen(), // HomeScreen as the initial screen
         '/sendMoney': (context) => const SendMoneyScreen(), // SendMoneyScreen route
